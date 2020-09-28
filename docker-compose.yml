@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   rstudio:
-    image: tschaffter/rstudio:0.2.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     env_file:
       .env
     restart: always
