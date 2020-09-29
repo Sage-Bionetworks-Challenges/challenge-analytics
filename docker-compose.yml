@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  rstudio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      .env
+    restart: always
+    volumes:
+      - data:/data
+      - /home/tschaffter/dev/challenge-analytics:/home/${USER}/project
+    ports:
+      - "8787:8787"
+
+volumes:
+    data:
